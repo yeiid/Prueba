@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termux y Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Guía Interactiva de Termux y Python</h1>
+    </header>
+
+    <!-- Simulador de Comandos -->
+    <section>
+        <h2>Simulador de Comandos</h2>
+        <form action="/comando" method="post">
+            <input type="text" name="comando" placeholder="Escribe un comando (ej. ls)">
+            <button type="submit">Ejecutar</button>
+        </form>
+        {% if resultado %}
+            <p><strong>Resultado:</strong> {{ resultado }}</p>
+        {% endif %}
+    </section>
+
+    <!-- Ejemplo de Código Python -->
+    <section>
+        <h2>Ejemplo de Código en Python</h2>
+        <pre>
+def suma(a, b):
+    return a + b
+
+print(suma(3, 4))
+        </pre>
+        <button onclick="alert('Resultado: 7')">Ejecutar Código</button>
+    </section>
+</body>
+</html>
